@@ -64,7 +64,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddATask.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\DeletingATask.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeletingATask.feature</DependentUpon>
+    </Compile>
     <Compile Include="StepDefinitions\AddATaskSteps.cs" />
+    <Compile Include="StepDefinitions\DeletingATaskSteps.cs" />
     <Compile Include="SystemTasks\AndroidTasks.cs" />
     <Compile Include="SystemTasks\IOSTasks.cs" />
     <Compile Include="SystemTasks\ITasks.cs" />
@@ -75,6 +81,10 @@
     <None Include="Features\AddATask.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddATask.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DeletingATask.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeletingATask.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

@@ -13,5 +13,6 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
         ITasks AddNote(string taskNote);
         ITasks SaveTask();
         bool HasTask(string taskTitle);
+        ITasks DeleteTask(string taskName);
     }
 }

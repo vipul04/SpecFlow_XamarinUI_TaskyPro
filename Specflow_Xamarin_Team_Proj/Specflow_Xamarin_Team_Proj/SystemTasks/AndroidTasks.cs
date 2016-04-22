@@ -40,12 +40,24 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
         {
             try
             {
-                app.WaitForElement(c => c.Marked(taskTitle), timeout: TimeSpan.FromSeconds(1));
-                return true;
+                AppResult[] result = app.Query(c => c.Marked("Get Milk"));
+                if (result.Length == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true; 
+                }
+
+                       
+                    //app.WaitForElement(c => c.Marked(taskTitle), timeout: TimeSpan.FromSeconds(5));
+                //return true;
             }
             catch (TimeoutException)
             {
-
+                Console.WriteLine("Exception caught");
+                return false;
             }
             return false;
         }
@@ -55,5 +67,16 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
             app.Tap("Save");
             return this;
         }
+
+        public ITasks DeleteTask(string taskName)
+        {
+            app.Tap(c => c.Marked(taskName));
+            app.WaitForNoElement(taskName);
+            app.Tap(c => c.Id("menu_delete_task"));
+
+            return this;
+        }
+
+        
     }
 }
