@@ -15,13 +15,13 @@ namespace Specflow_Xamarin_Team_Proj
             {
                 return new AndroidTasks (ConfigureApp
                     .Android
-                    .ApkFile("/Users/Chris Gungaloo/Documents/Visual Studio 2015/Projects/SpecFlow_XamarinUI_TaskyPro/Specflow_Xamarin_Team_Proj/Specflow_Xamarin_Team_Proj/Binaries/Android/com.xamarin.samples.taskyandroid.apk")
+                    .ApkFile("../../Binaries/Android/com.xamarin.samples.taskyandroid.apk")
                     .StartApp());
             }
 
             else return new IOSTasks (ConfigureApp
                 .iOS
-                .AppBundle("/Users/Chris Gungaloo/Documents/Visual Studio 2015/Projects/SpecFlow_XamarinUI_TaskyPro/Specflow_Xamarin_Team_Proj/Specflow_Xamarin_Team_Proj/Binaries/iOS/TaskyiOS.app")
+                .AppBundle("../../Binaries/iOS/TaskyiOS.app")
                 .StartApp());
         }
     }
