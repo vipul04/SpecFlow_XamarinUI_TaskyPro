@@ -58,7 +58,7 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
         public ITasks DeleteTask(string taskName)
         {
             app.Tap(c => c.Marked(taskName));
-            app.WaitForNoElement(taskName);
+            //app.WaitForNoElement(taskName);
             app.Tap(c => c.Id("menu_delete_task")); // This is the Android version, change to iOS
 
             return this;

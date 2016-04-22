@@ -47,11 +47,13 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
                 }
                 else
                 {
+                    Console.WriteLine("the result length is ...drumroll...." + result.Length);
                     return true; 
                 }
+                
 
                        
-                    //app.WaitForElement(c => c.Marked(taskTitle), timeout: TimeSpan.FromSeconds(5));
+                    
                 //return true;
             }
             catch (TimeoutException)
@@ -71,8 +73,10 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
         public ITasks DeleteTask(string taskName)
         {
             app.Tap(c => c.Marked(taskName));
-            app.WaitForNoElement(taskName);
+            app.WaitForElement(taskName);
             app.Tap(c => c.Id("menu_delete_task"));
+            app.WaitForNoElement(c => c.Marked(taskName));
+
 
             return this;
         }
