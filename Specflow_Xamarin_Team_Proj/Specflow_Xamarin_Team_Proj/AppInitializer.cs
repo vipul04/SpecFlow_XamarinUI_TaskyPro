@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Specflow_Xamarin_Team_Proj.SystemTasks;
+using System;
 using System.IO;
 using System.Linq;
 using Xamarin.UITest;
@@ -8,18 +9,20 @@ namespace Specflow_Xamarin_Team_Proj
 {
     public class AppInitializer
     {
-        public static IApp StartApp(Platform platform)
+        public static ITasks StartApp(Platform platform)
         {
             if (platform == Platform.Android)
             {
-                return ConfigureApp
+                return new AndroidTasks (ConfigureApp
                     .Android
-                    .StartApp();
+                    .ApkFile("/Users/Chris Gungaloo/Documents/Visual Studio 2015/Projects/SpecFlow_XamarinUI_TaskyPro/Specflow_Xamarin_Team_Proj/Specflow_Xamarin_Team_Proj/Binaries/Android/com.xamarin.samples.taskyandroid.apk")
+                    .StartApp());
             }
 
-            return ConfigureApp
+            else return new IOSTasks (ConfigureApp
                 .iOS
-                .StartApp();
+                .AppBundle("/Users/Chris Gungaloo/Documents/Visual Studio 2015/Projects/SpecFlow_XamarinUI_TaskyPro/Specflow_Xamarin_Team_Proj/Specflow_Xamarin_Team_Proj/Binaries/iOS/TaskyiOS.app")
+                .StartApp());
         }
     }
 }
