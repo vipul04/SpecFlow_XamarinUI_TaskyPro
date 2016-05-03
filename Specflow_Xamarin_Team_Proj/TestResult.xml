@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="3" result="Passed" total="3" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.2.1.0" clr-version="4.0.30319.42000" start-time="2016-04-29 16:11:28Z" end-time="2016-04-29 16:12:50Z" duration="81.515228">
+  <command-line><![CDATA["C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe"  "C:\Users\Kouros\SpecFlow_XamarinUI_TaskyPro new\Specflow_Xamarin_Team_Proj\Specflow_Xamarin_Team_Proj\bin\Debug\Specflow_Xamarin_Team_Proj.dll"]]></command-line>
+  <test-suite type="Assembly" id="1-1006" name="C:\Users\Kouros\SpecFlow_XamarinUI_TaskyPro new\Specflow_Xamarin_Team_Proj\Specflow_Xamarin_Team_Proj\bin\Debug\Specflow_Xamarin_Team_Proj.dll" fullname="C:\Users\Kouros\SpecFlow_XamarinUI_TaskyPro new\Specflow_Xamarin_Team_Proj\Specflow_Xamarin_Team_Proj\bin\Debug\Specflow_Xamarin_Team_Proj.dll" runstate="Runnable" testcasecount="3" result="Passed" duration="81.473622" total="3" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="_PID" value="6984" />
+      <property name="_APPDOMAIN" value="test-domain-" />
+    </properties>
+    <test-suite type="Namespace" id="1-1007" name="Specflow_Xamarin_Team_Proj" fullname="Specflow_Xamarin_Team_Proj" runstate="Runnable" testcasecount="3" result="Passed" duration="81.461487" total="3" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="Namespace" id="1-1008" name="Features" fullname="Specflow_Xamarin_Team_Proj.Features" runstate="Runnable" testcasecount="3" result="Passed" duration="81.461133" total="3" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestFixture" id="1-1000" name="AddATaskFeature" fullname="Specflow_Xamarin_Team_Proj.Features.AddATaskFeature" runstate="Runnable" testcasecount="1" result="Passed" duration="27.738720" total="1" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="_DESCRIPTION" value="AddATask" />
+          </properties>
+          <test-case id="1-1001" name="AddingATask" fullname="Specflow_Xamarin_Team_Proj.Features.AddATaskFeature.AddingATask" runstate="Runnable" result="Passed" duration="13.526716" asserts="1">
+            <properties>
+              <property name="_DESCRIPTION" value="Adding a task" />
+              <property name="_CATEGORIES" value="AddTask" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1-1002" name="AddingMultipleTasksFeature" fullname="Specflow_Xamarin_Team_Proj.Features.AddingMultipleTasksFeature" runstate="Runnable" testcasecount="1" result="Passed" duration="37.767241" total="1" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="_DESCRIPTION" value="Adding Multiple Tasks" />
+          </properties>
+          <test-case id="1-1003" name="AddMultipleTasks" fullname="Specflow_Xamarin_Team_Proj.Features.AddingMultipleTasksFeature.AddMultipleTasks" runstate="Runnable" result="Passed" duration="37.766016" asserts="3">
+            <properties>
+              <property name="_DESCRIPTION" value="Add multiple tasks" />
+              <property name="_CATEGORIES" value="AddMultipleTasks" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1-1004" name="DeletingATaskFeature" fullname="Specflow_Xamarin_Team_Proj.Features.DeletingATaskFeature" runstate="Runnable" testcasecount="1" result="Passed" duration="15.900320" total="1" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="_DESCRIPTION" value="DeletingATask" />
+          </properties>
+          <test-case id="1-1005" name="DeletingATask" fullname="Specflow_Xamarin_Team_Proj.Features.DeletingATaskFeature.DeletingATask" runstate="Runnable" result="Passed" duration="15.899271" asserts="1">
+            <properties>
+              <property name="_DESCRIPTION" value="Deleting a task" />
+              <property name="_CATEGORIES" value="deletingTasks" />
+            </properties>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
