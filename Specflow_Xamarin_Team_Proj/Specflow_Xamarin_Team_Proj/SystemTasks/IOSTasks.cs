@@ -63,5 +63,19 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
 
             return this;
         }
+
+        public bool DoesNotHaveTask(string taskName)
+        {
+            try
+            {
+                app.WaitForNoElement(c => c.Marked(taskName));
+                return true;
+            }
+            catch (TimeoutException)
+            {
+
+            }
+            return false;
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
         ITasks SaveTask();
         bool HasTask(string taskTitle);
         ITasks DeleteTask(string taskName);
+        bool DoesNotHaveTask(string taskName);
     }
 }

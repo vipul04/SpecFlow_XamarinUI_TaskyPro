@@ -3,40 +3,41 @@ using TechTalk.SpecFlow;
 using Xamarin.UITest;
 using NUnit.Framework;
 using Specflow_Xamarin_Team_Proj.SystemTasks;
+using Specflow_Xamarin_Team_Proj.Features;
 
 namespace Specflow_Xamarin_Team_Proj.StepDefinitions
 {
     [Binding]
     public class AddATaskSteps
     {
-        ITasks tasks;
-        Platform platform;
 
+        public ITasks app_tasks;
+       
         [Given(@"I am on the homepage")]
         public void GivenIAmOnTheHomepage()
         {
-            tasks = AppInitializer.StartApp(platform);
+            app_tasks = FeatureBase.app_tasks;
         }
         
         [When(@"I add a task called ""(.*)""")]
         public void WhenIAddATaskCalled(string taskName)
         {
-            tasks
+            app_tasks
                 .AddTask()
                 .AddTitle(taskName)
                 .AddNote("Get milk from shop");
         }
-        
+                
         [When(@"I save the task")]
         public void WhenISaveTheTask()
         {
-            tasks.SaveTask();
+            app_tasks.SaveTask();
         }
         
         [Then(@"I should see ""(.*)"" on the homepage")]
         public void ThenIShouldSeeOnTheHomepage(string taskName)
         {
-            Assert.IsTrue(tasks.HasTask(taskName));
+            Assert.IsTrue(app_tasks.HasTask(taskName));
         }
     }
 }

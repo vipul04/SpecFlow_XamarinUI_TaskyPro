@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Specflow_Xamarin_Team_Proj.Features;
 using Specflow_Xamarin_Team_Proj.SystemTasks;
 using System;
 using TechTalk.SpecFlow;
@@ -10,14 +11,14 @@ namespace Specflow_Xamarin_Team_Proj.StepDefinitions
     public class DeletingATaskSteps
     {
         Platform platform;
-        ITasks tasks;
+        ITasks app_tasks;
 
         [Given(@"I have added a task ""(.*)""")]
         public void GivenIHaveAddedATask(string taskName)
         {
-            tasks = AppInitializer.StartApp(platform);
+            app_tasks = FeatureBase.app_tasks;
 
-            tasks
+            app_tasks
             .AddTask()
             .AddTitle(taskName)
             .AddNote("Please delete this")
@@ -28,13 +29,13 @@ namespace Specflow_Xamarin_Team_Proj.StepDefinitions
         [When(@"I tap delete for ""(.*)""")]
         public void WhenITapDeleteFor(string taskName)
         {
-            tasks.DeleteTask(taskName);
+            app_tasks.DeleteTask(taskName);
         }
 
         [Then(@"The ""(.*)"" task should no longer exist")]
         public void ThenTheTaskShouldNoLongerExist(string taskName)
         {
-            Assert.IsFalse(tasks.HasTask(taskName));
+            Assert.IsTrue(app_tasks.DoesNotHaveTask(taskName));
         }
     }
 }

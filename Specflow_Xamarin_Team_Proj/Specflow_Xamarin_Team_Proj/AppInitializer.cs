@@ -15,6 +15,7 @@ namespace Specflow_Xamarin_Team_Proj
             {
                 return new AndroidTasks (ConfigureApp
                     .Android
+                    .EnableLocalScreenshots()
                     .ApkFile("../../Binaries/Android/com.xamarin.samples.taskyandroid.apk")
                     .StartApp());
             }

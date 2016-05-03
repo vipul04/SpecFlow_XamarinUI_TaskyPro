@@ -64,23 +64,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddATask.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\AddMultipleTasks.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddMultipleTasks.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\DeletingATask.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DeletingATask.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\FeatureBase.cs" />
     <Compile Include="StepDefinitions\AddATaskSteps.cs" />
+    <Compile Include="StepDefinitions\AddingMultipleTasksSteps.cs" />
     <Compile Include="StepDefinitions\DeletingATaskSteps.cs" />
     <Compile Include="SystemTasks\AndroidTasks.cs" />
     <Compile Include="SystemTasks\IOSTasks.cs" />
     <Compile Include="SystemTasks\ITasks.cs" />
     <Compile Include="AppInitializer.cs" />
+    <Compile Include="Task.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Features\AddATask.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddATask.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\AddMultipleTasks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddMultipleTasks.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\DeletingATask.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

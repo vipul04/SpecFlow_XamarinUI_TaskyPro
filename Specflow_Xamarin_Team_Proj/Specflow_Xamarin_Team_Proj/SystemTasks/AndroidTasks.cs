@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
@@ -40,7 +41,10 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
         {
             try
             {
-                AppResult[] result = app.Query(c => c.Marked("Get Milk"));
+                app.WaitForElement(taskTitle);
+                AppResult[] result = app.Query(c => c.Marked(taskTitle));
+
+                Console.WriteLine(taskTitle);
                 if (result.Length == 0)
                 {
                     return false;
@@ -81,6 +85,19 @@ namespace Specflow_Xamarin_Team_Proj.SystemTasks
             return this;
         }
 
-        
+        public bool DoesNotHaveTask(string taskName)
+        {
+            try
+            {
+                app.WaitForNoElement(c => c.Marked(taskName));
+                app.Screenshot("No task");
+                return true;
+            }
+            catch (TimeoutException)
+            {
+
+            }
+            return false;
+        }
     }
 }
